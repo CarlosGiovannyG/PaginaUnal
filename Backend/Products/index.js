@@ -3,9 +3,12 @@ var express = require("express");
 var app = express();
 var morgan = require("morgan");
 var mongoose = require("mongoose");
+const cors = require("cors");
 
 //importing routes
 var productsRouter = require("./src/routes/products");
+var categoryRouter = require("./src/routes/category");
+var measureUnitRouter = require("./src/routes/measure");
 
 //setting logger
 morgan(function (tokens, req, res) {
@@ -20,8 +23,9 @@ morgan(function (tokens, req, res) {
   ].join(" ");
 });
 
+
 //setting database connection
-const connect = mongoose.connect(process.env.DB_HOST);
+const connect = mongoose.connect("mongodb+srv://adminadmin:adminadmin@accountdb.wuvh2.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
 
 connect
   .then((db) => {
@@ -32,12 +36,16 @@ connect
   });
 
 app.use(morgan("dev"));
+app.use(express.urlencoded({extended:false}))
 app.use(express.json());
+app.use(cors())
 
 app.use("/products", productsRouter);
+app.use("/category", categoryRouter);
+app.use("/measure", measureUnitRouter);
 
 //setting server connection
-const port = process.env.SERVER_PORT || 3000;
+const port = process.env.PORT || 3000;
 
 app.listen(port, () => {
   console.log(`server ready at port: ${process.env.PORT}`);

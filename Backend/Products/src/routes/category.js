@@ -1,69 +1,66 @@
-var express = require("express");
+const express = require('express');
+const Category = require('../models/category');
 
-const Products = require("../models/products");
+const categoryRouter = express.Router();
 
-const productsRouter = express.Router();
-
-productsRouter
-  .route("/")
+categoryRouter.route('/')
   .get((req, res, next) => {
-    Products.find({})
-      .then(
-        (books) => {
-         
-          res.statusCode = 200;
-          res.setHeader("Content-Type", "application/json");
-          res.json(books);
-        },
-        (error) => next(error)
+
+    Category.find({})
+      .then(category => {
+        res.statusCode = 200;
+        res.setHeader('Content-Type', 'application/json');
+        res.json(category);
+      },
+        error => next(error)
       )
-      .catch((error) => next(error));
+      .catch(err => next(err));
   })
 
   .post((req, res, next) => {
-    Products.create(req.body)
+    Category.create(req.body)
       .then(
-        (book) => {          
+        (category) => {
           res.statusCode = 200;
           res.setHeader("Content-Type", "application/json");
-          res.json(book);
+          res.json(category);
         },
         (error) => next(error)
       )
       .catch((error) => next(error));
   });
 
-productsRouter
-  .route("/:bookId")
 
+categoryRouter.route('/:id')
+  
+  
   .get((req, res, next) => {
-    Products.findById(req.params.bookId)
+    Category.findById(req.params.id)
       .then(
-        (book) => {         
+        (category) => {
           res.statusCode = 200;
           res.setHeader("Content-Type", "application/json");
-          res.json(book);
+          res.json(category);
         },
         (error) => next(error)
       )
       .catch((error) => next(error));
   })
 
+
   .put((req, res, next) => {
-    Products.findByIdAndUpdate(
-      req.params.bookId,
+    Category.findByIdAndUpdate(
+      req.params.id,
       {
         $set: req.body,
       },
       { new: true }
     )
       .then(
-        (book) => {
-          populate('measue');
-          populate('category');
+        (category) => {
           res.statusCode = 200;
           res.setHeader("Content-Type", "application/json");
-          res.json(book);
+          res.json(category);
         },
         (error) => next(error)
       )
@@ -71,7 +68,7 @@ productsRouter
   })
 
   .delete((req, res, next) => {
-    Products.findByIdAndDelete(req.params.bookId)
+    Category.findByIdAndDelete(req.params.id)
       .then(
         (response) => {
           res.statusCode = 204;
@@ -82,5 +79,4 @@ productsRouter
       )
       .catch((error) => next(error));
   });
-
-module.exports = productsRouter;
+module.exports = categoryRouter;
