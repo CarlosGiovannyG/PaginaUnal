@@ -72,10 +72,10 @@ TOKEN_EXPIRED_AFTER_SECONDS = 900
 DATABASES = {
 'default': {
 'ENGINE': 'django.db.backends.postgresql_psycopg2',
-'NAME': 'd9ueg6t484q9p3',
-'USER': 'aowsrplhybolro',
-'PASSWORD': 'eb3492762df1cf8b3ccb80b8abdcaa8bfd538c6fc2f945dec277b989b3001d98',
-'HOST': 'ec2-3-212-168-103.compute-1.amazonaws.com',
+    'NAME': 'd1v7h8b3lk721h',
+    'USER': 'jebkluxoncniog',
+    'PASSWORD': 'dbbc4d731626b9bd48d2d6d7a0ade22e698731a143403b4888ceb8a3fb8d507e',
+    'HOST': 'ec2-18-235-154-252.compute-1.amazonaws.com',
 'PORT': '5432',
 }
 }

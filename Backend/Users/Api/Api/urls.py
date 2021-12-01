@@ -6,7 +6,7 @@ from rest_framework import permissions
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
 
-from users.views import Login, Logout, UserToken
+from users.views import Login, Logout, UserToken, Acces
 
 
 schema_view = get_schema_view(
@@ -32,5 +32,6 @@ urlpatterns = [
     path('users/', include('users.api.urls')),
     path('logout/',Logout.as_view(), name='logout_view'),
     path('login/',Login.as_view(), name='login_view'),
+    path('acces/', Acces.as_view(), name='acces_view'),
     path('refresh/',UserToken.as_view(), name='refresh_view'),
 ]

@@ -9,7 +9,7 @@ class UserTokenSerializer(serializers.ModelSerializer):
 
   class Meta:
     model=User
-    fields=('username','email','name','last_name','id','second_name','phone','password')
+    fields=('username','email','name','last_name','id','second_name','phone')
 
 
 
@@ -51,5 +51,4 @@ class UserListSerializers(serializers.ModelSerializer):
             'Apellido':instance['last_name'],
             'Telefono':instance['phone'],
             'Correo':instance['email'],
-            'Password':instance['password'],
         }
