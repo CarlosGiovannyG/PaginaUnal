@@ -14,7 +14,8 @@ const productsSchema = new Schema({
     trim: true,
   },
   price: {
-    type: String,
+    type: Number,
+    default:0,
     required: true,
     trim: true,
   },
@@ -22,6 +23,18 @@ const productsSchema = new Schema({
     type: String,
     required: true,
   },
+  category: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Category',
+    required: true
+  },
+  measure_unit: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Measure_Unit',
+    required: true
+  },
+}, {
+  timestamps: true
 });
 
 var Products = mongoose.model("Product", productsSchema);

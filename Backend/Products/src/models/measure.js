@@ -12,6 +12,8 @@ const measure_unitSchema = new Schema({
     type: String,
     trim: true,
   },
+}, {
+  timestamps: true
 });
 
 var Measure_Unit = mongoose.model("Measure_Unit", measure_unitSchema);

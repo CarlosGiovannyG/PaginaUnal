@@ -9,6 +9,7 @@ const cors = require("cors");
 var productsRouter = require("./src/routes/products");
 var categoryRouter = require("./src/routes/category");
 var measureUnitRouter = require("./src/routes/measure");
+var billsRouter = require("./src/routes/bilss");
 
 //setting logger
 morgan(function (tokens, req, res) {
@@ -43,6 +44,7 @@ app.use(cors())
 app.use("/products", productsRouter);
 app.use("/category", categoryRouter);
 app.use("/measure", measureUnitRouter);
+app.use("/bills", billsRouter);
 
 //setting server connection
 const port = process.env.PORT || 3000;

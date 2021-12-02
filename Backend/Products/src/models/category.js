@@ -12,6 +12,9 @@ const categorySchema = new Schema({
     type: String,
     trim: true,
   },
+ 
+}, {
+  timestamps: true
 });
 
 var Category = mongoose.model("Category", categorySchema);

@@ -1,17 +1,16 @@
 var express = require("express");
 
+const Bills = require("../models/bills");
 const Products = require("../models/products");
 
-const productsRouter = express.Router();
+const billsRouter = express.Router();
 
-productsRouter
+billsRouter
   .route("/")
   .get((req, res, next) => {
-    Products.find({})
-      .populate("category")
-      .populate("measure_unit")
+    Bills.find({})
       .then(
-        (books) => {        
+        (books) => {
           res.statusCode = 200;
           res.setHeader("Content-Type", "application/json");
           res.json(books);
@@ -22,9 +21,9 @@ productsRouter
   })
 
   .post((req, res, next) => {
-    Products.create(req.body)
+    Bills.create(req.body)
       .then(
-        (book) => {          
+        (book) => {
           res.statusCode = 200;
           res.setHeader("Content-Type", "application/json");
           res.json(book);
@@ -34,18 +33,13 @@ productsRouter
       .catch((error) => next(error));
   });
 
-productsRouter
-  .route("/:bookId")
-
+billsRouter
+  .route("/:id")
   .get((req, res, next) => {
+    Bills.findById(req.params.id)
 
-    console.log("Hola", req.params.bookId)
-
-    Products.findById(req.params.bookId)
-      .populate("category")
-      .populate("measure_unit")
       .then(
-        (book) => {         
+        (book) => {
           res.statusCode = 200;
           res.setHeader("Content-Type", "application/json");
           res.json(book);
@@ -56,10 +50,10 @@ productsRouter
   })
 
 
-  
+
   .put((req, res, next) => {
-    Products.findByIdAndUpdate(
-      req.params.bookId,
+    Bills.findByIdAndUpdate(
+      req.params.id,
       {
         $set: req.body,
       },
@@ -77,7 +71,7 @@ productsRouter
   })
 
   .delete((req, res, next) => {
-    Products.findByIdAndDelete(req.params.bookId)
+    Bills.findByIdAndDelete(req.params.id)
       .then(
         (response) => {
           res.statusCode = 204;
@@ -89,4 +83,4 @@ productsRouter
       .catch((error) => next(error));
   });
 
-module.exports = productsRouter;
+module.exports = billsRouter;
