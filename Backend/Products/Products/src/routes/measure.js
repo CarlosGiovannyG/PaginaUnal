@@ -32,6 +32,19 @@ measureUnitRouter.route('/')
 
 
 measureUnitRouter.route('/:id')
+  .get((req, res, next) => {
+    Measure_Unit.findById(req.params.id)
+      .then(
+        (category) => {
+          res.statusCode = 200;
+          res.setHeader("Content-Type", "application/json");
+          res.json(category);
+        },
+        (error) => next(error)
+      )
+      .catch((error) => next(error));
+  })
+
   .put((req, res, next) => {
     Measure_Unit.findByIdAndUpdate(
       req.params.id,
@@ -41,9 +54,7 @@ measureUnitRouter.route('/:id')
       { new: true }
     )
       .then(
-        (mesure) => {
-          populate('measue');
-          populate('category');
+        (mesure) => {        
           res.statusCode = 200;
           res.setHeader("Content-Type", "application/json");
           res.json(mesure);
@@ -57,9 +68,9 @@ measureUnitRouter.route('/:id')
     Measure_Unit.findByIdAndDelete(req.params.id)
       .then(
         (response) => {
-          res.statusCode = 204;
+          res.statusCode = 200;
           res.setHeader("content-Type", "application/json");
-          res.json(response);
+          res.json({ mensaje: 'Unidad de Medida Eliminada' });
         },
         (error) => next(error)
       )

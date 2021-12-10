@@ -1,48 +1,46 @@
-var express = require("express");
+const express = require('express');
+const Category = require('../models/category');
 
-const Bills = require("../models/bills");
-const Products = require("../models/products");
+const categoryRouter = express.Router();
 
-const billsRouter = express.Router();
-
-billsRouter
-  .route("/")
+categoryRouter.route('/')
   .get((req, res, next) => {
-    Bills.find({})
-      .then(
-        (books) => {
-          res.statusCode = 200;
-          res.setHeader("Content-Type", "application/json");
-          res.json(books);
-        },
-        (error) => next(error)
+
+    Category.find({})
+      .then(category => {
+        res.statusCode = 200;
+        res.setHeader('Content-Type', 'application/json');
+        res.json(category);
+      },
+        error => next(error)
       )
-      .catch((error) => next(error));
+      .catch(err => next(err));
   })
 
   .post((req, res, next) => {
-    Bills.create(req.body)
+    Category.create(req.body)
       .then(
-        (book) => {
+        (category) => {
           res.statusCode = 200;
           res.setHeader("Content-Type", "application/json");
-          res.json(book);
+          res.json(category);
         },
         (error) => next(error)
       )
       .catch((error) => next(error));
   });
 
-billsRouter
-  .route("/:id")
-  .get((req, res, next) => {
-    Bills.findById(req.params.id)
 
+categoryRouter.route('/:id')
+  
+  
+  .get((req, res, next) => {
+    Category.findById(req.params.id)
       .then(
-        (book) => {
+        (category) => {
           res.statusCode = 200;
           res.setHeader("Content-Type", "application/json");
-          res.json(book);
+          res.json(category);
         },
         (error) => next(error)
       )
@@ -50,9 +48,8 @@ billsRouter
   })
 
 
-
   .put((req, res, next) => {
-    Bills.findByIdAndUpdate(
+    Category.findByIdAndUpdate(
       req.params.id,
       {
         $set: req.body,
@@ -60,10 +57,10 @@ billsRouter
       { new: true }
     )
       .then(
-        (book) => {
+        (category) => {
           res.statusCode = 200;
           res.setHeader("Content-Type", "application/json");
-          res.json(book);
+          res.json(category);
         },
         (error) => next(error)
       )
@@ -71,16 +68,15 @@ billsRouter
   })
 
   .delete((req, res, next) => {
-    Bills.findByIdAndDelete(req.params.id)
+    Category.findByIdAndDelete(req.params.id)
       .then(
         (response) => {
-          res.statusCode = 204;
+          res.statusCode = 200;
           res.setHeader("content-Type", "application/json");
-          res.json(response);
+          res.json({ mensaje: 'Categoria Eliminada' });
         },
         (error) => next(error)
       )
       .catch((error) => next(error));
   });
-
-module.exports = billsRouter;
+module.exports = categoryRouter;

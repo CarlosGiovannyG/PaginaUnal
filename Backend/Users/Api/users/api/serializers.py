@@ -17,11 +17,14 @@ class UserSerializers(serializers.ModelSerializer):
 
   class Meta:
     model = User
-    fields = '__all__'
+    fields = ('username', 'email', 'name', 'last_name',
+              'id', 'second_name', 'phone', 'password')
 
 
   def create(self, validated_data):
+     
      user = User(**validated_data)
+    
      user.set_password(validated_data['password'])
      user.save()
      return user

@@ -51,4 +51,4 @@ class User(AbstractBaseUser, PermissionsMixin):
         return (self.username)
 
     def __str__(self):
-        return 'Usuario {0}, con nombre: {1}{2} '.format(self.username,self.name,self.last_name)
+        return 'Usuario {0}, con nombre: {1} '' {2} '.format(self.username,self.name,self.last_name)

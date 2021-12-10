@@ -9,7 +9,7 @@ class ExpiringTokenAuthentication(TokenAuthentication):
 
 # CALCULA EL TIEMPO DE EXPIRACION
   def expires_in(self,token):
-    print(token)
+    
     time_elapsed = timezone.now() - token.created
     left_time = timedelta(seconds = settings.TOKEN_EXPIRED_AFTER_SECONDS) - time_elapsed
     return left_time
@@ -26,6 +26,7 @@ class ExpiringTokenAuthentication(TokenAuthentication):
     if is_expire:
       self.expired =True
       user = token.user
+     
       token.delete()
       token = self.get_model().objects.create(user =user)
 
@@ -40,6 +41,7 @@ class ExpiringTokenAuthentication(TokenAuthentication):
       token = self.get_model().objects.select_related('user').get(key = key)
       #token = self.token_expire_handler(token)     
       user = token.user
+     
     except self.get_model().DoesNotExist:
       message ='Token invalido'     
       self.expired = True

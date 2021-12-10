@@ -5,7 +5,7 @@ from rest_framework.response import Response
 from rest_framework.decorators import api_view
 
 from users.models import User
-from users.api.serializers import UserSerializers, UserListSerializers
+from users.api.serializers import UserSerializers, UserListSerializers, UserTokenSerializer
 
 
 @api_view(['GET','POST'])
@@ -13,15 +13,16 @@ def user_api_view(request):
 
   if request.method =='GET':
     users = User.objects.all().values('id','username','second_name','email','name','last_name','phone','password')
-    user_serializer = UserListSerializers(users,many=True)
+    user_serializer = UserListSerializers(users,many=True)    
     return Response(user_serializer.data,status=status.HTTP_200_OK)
 
-  if request.method =='POST':
+  if request.method =='POST':    
     user_serializer = UserSerializers( data = request.data)
+   
     
     if user_serializer.is_valid():
-      user_serializer.save()
-      return Response({'mensaje':'Usuario creado con exito'} ,status=status.HTTP_201_CREATED)
+      user_serializer.save()     
+      return Response({'mensaje': 'Usuario registrado'}, status=status.HTTP_201_CREATED)
   return Response(user_serializer.errors,status=status.HTTP_400_BAD_REQUEST)
 
   
@@ -56,6 +57,6 @@ def user_detail_api_view(resquest,pk=None):
 
           user.delete()
 
-          return Response({'mrensaje':"Usuario eliminado"},status=status.HTTP_200_OK)
+          return Response({'mensaje':"Usuario eliminado"},status=status.HTTP_200_OK)
 
     return Response({'mensaje':'No se ha encontrado un usuario con estos datos'},status=status.HTTP_400_BAD_REQUEST)

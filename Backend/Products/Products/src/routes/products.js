@@ -39,7 +39,7 @@ productsRouter
 
   .get((req, res, next) => {
 
-    console.log("Hola", req.params.bookId)
+   
 
     Products.findById(req.params.bookId)
       .populate("category")
@@ -67,6 +67,7 @@ productsRouter
     )
       .then(
         (book) => {
+          console.log(book);
           res.statusCode = 200;
           res.setHeader("Content-Type", "application/json");
           res.json(book);
@@ -80,9 +81,8 @@ productsRouter
     Products.findByIdAndDelete(req.params.bookId)
       .then(
         (response) => {
-          res.statusCode = 204;
-          res.setHeader("content-Type", "application/json");
-          res.json(response);
+          res.statusCode = 200;
+          res.json({mensaje:'Producto Eliminado'});
         },
         (error) => next(error)
       )
