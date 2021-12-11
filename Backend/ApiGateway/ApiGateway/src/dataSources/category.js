@@ -11,17 +11,14 @@ class CategoryApi extends RESTDataSource {
 
   async CreateCategory(credentials) {
     credentials = new Object(credentials);
-
     return await this.post('/', credentials);
   }
 
   async CategoryById(categoryId) {
-
     return await this.get(`/${categoryId}`);
   }
 
   async Categories() {
-
     return await this.get(`/`);
   }
 
@@ -33,7 +30,6 @@ class CategoryApi extends RESTDataSource {
   }
 
   async DeleteCategory(categoryId) {
-
     return await this.delete(`/${categoryId}`);
   }
 }

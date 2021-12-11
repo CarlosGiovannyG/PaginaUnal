@@ -1,69 +1,67 @@
-const { gql } = require('apollo-server');
+const { gql } = require("apollo-server");
 
 const usersType = gql`
- input RegisterUser {
-        username: String!
-        name: String!
-        second_name: String!
-        last_name: String!
-        phone: String!
-        email: String!
-        password: String!
-    }
+  input RegisterUser {
+    username: String!
+    name: String!
+    second_name: String!
+    last_name: String!
+    phone: String!
+    email: String!
+    password: String!
+  }
 
- type RegisterDetail {
-        mensaje: String!
-       
-    }
-   
-    input LoginUser {
-        username: String!
-        password: String!
-    }
+  type RegisterDetail {
+    mensaje: String!
+  }
 
-    type LoginDetail {
-       token: String!
-       mensaje: String!
-    }
+  input LoginUser {
+    username: String!
+    password: String!
+  }
 
-    input Refresh{
-        username: String!
-    }
+  type LoginDetail {
+    token: String!
+    mensaje: String!
+  }
 
-    type RefreshDetail{
-        token: String!
-    }
+  input Refresh {
+    username: String!
+  }
 
-    type UserDetail {
-        username: String!
-        email: String!
-        name: String!
-        last_name: String!
-        id: ID!
-        second_name: String!
-        phone: String!
-    }
+  type RefreshDetail {
+    token: String!
+  }
 
-    input Logout{
-        token: String!
-    }
+  type UserDetail {
+    username: String!
+    email: String!
+    name: String!
+    last_name: String!
+    id: ID!
+    second_name: String!
+    phone: String!
+  }
 
-    type LogoutDetail{
-        mensaje_sesion: String!
-        mensaje_token: String!
-       
-    }
+  input Logout {
+    token: String!
+  }
 
-    type Query {
-        userDetailById(userId: Int!): UserDetail
-    }
+  type LogoutDetail {
+    mensaje_sesion: String!
+    mensaje_token: String!
+  }
 
-    type Mutation {       
-        RegisterUser(input: RegisterUser!): RegisterDetail!      
-        LoginUser(credentials: LoginUser!): LoginDetail!       
-        RefreshToken(credentials: Refresh!): RefreshDetail!       
-       LogoutUser(credentials: Logout!): LogoutDetail!       
-    }
+  type Query {
+    userDetailById(userId: Int!): UserDetail
+  }
+
+  type Mutation {
+    RegisterUser(input: RegisterUser!): RegisterDetail!
+    LoginUser(credentials: LoginUser!): LoginDetail!
+    RefreshToken(credentials: Refresh!): RefreshDetail!
+    LogoutUser(credentials: Logout!): LogoutDetail!
+  }
 `;
 
 module.exports = usersType;

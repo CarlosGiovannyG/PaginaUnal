@@ -1,57 +1,45 @@
 const { gql } = require("apollo-server");
 
 const billsTypes = gql`
-  
-input CreateBills {
+  input CreateBills {
     id_user: Int!
     products: [idProducts]
   }
 
-  input idBill {
-    id: ID!
-  }
-  
-  input idProducts {
-    _id: ID
-  }
-  
-  input idUser {
-    id: ID
-  }
+  input idBill {id: ID!}
+
+  input idProducts { _id: ID}
+
+  input idUser { id: ID }
 
   type BillsDetails {
     _id: ID
     id_user: Int
     products: [product]
     createdAt: String
-    updatedAt: String    
+    updatedAt: String
   }
 
-  type product {
-     _id: ID
-  }
+  type product {_id: ID }
 
   input BillsUpdate {
     id: ID!
     id_user: Int
     products: [idProducts]
-   
-  }
-type DeleteBill {
-    mensaje: String!
   }
 
-   type Query {
-     BillsAll: [BillsDetails!]
-   BillById(billId: idBill!): BillsDetails!
-   BillUser(idUser: idUser!): [BillsDetails!]
-  }
+  type DeleteBill { mensaje: String!}
 
+  type Query {
+    BillsAll: [BillsDetails!]
+    BillById(billId: idBill!): BillsDetails!
+    BillUser(idUser: idUser!): [BillsDetails!]
+  }
 
   type Mutation {
     CreateBills(input: CreateBills!): BillsDetails!
-     UpdateBills(input: BillsUpdate!): BillsDetails!
-     DeleteBills(billId: idBill!): DeleteBill!
+    UpdateBills(input: BillsUpdate!): BillsDetails!
+    DeleteBills(billId: idBill!): DeleteBill!
   }
 `;
 

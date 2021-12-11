@@ -5,6 +5,12 @@ const measureUnitTypes = require('./measureUnit');
 const billsTypes = require('./bilss');
 
 
-const schemasArrays = [usersTypes, productsTypes, categoriesTypes, measureUnitTypes, billsTypes];
+const schemasArrays = [
+  usersTypes,
+  productsTypes,
+  categoriesTypes,
+  measureUnitTypes,
+  billsTypes,
+];
 
 module.exports = schemasArrays;

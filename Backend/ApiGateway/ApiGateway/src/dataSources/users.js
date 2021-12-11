@@ -10,8 +10,7 @@ class UsersApi extends RESTDataSource {
   }
 
   async RegisterUser(input) {
-    input = new Object(input); 
-    
+    input = new Object(input);     
     return await this.post('/users/', input);
   }
   
@@ -30,7 +29,6 @@ class UsersApi extends RESTDataSource {
   async LogoutUser(credentials) {       
     return await this.post('/logout/', credentials);
   }
-  
 
 }
 

@@ -10,30 +10,25 @@ class ProductsApi extends RESTDataSource {
   }
 
   async CreateProduct(credentials) {
-    credentials = new Object(credentials);
-    
+    credentials = new Object(credentials);    
     return await this.post('/', credentials);
   }
   
-  async ProductById(producId) {
-   
+  async ProductById(producId) {   
     return await this.get(`/${producId}`);
   }
   
-  async Products() {
-    
+  async Products() {    
     return await this.get('/');
   }
   
   async UpdateProduct(productInput) {
     productInput = new Object(productInput);
-    let producId = productInput.id
-   
+    let producId = productInput.id   
     return await this.put(`/${producId}`,productInput);
   }
 
   async DeleteProduct(producId) {
-
     return await this.delete(`/${producId}`);
   }
 

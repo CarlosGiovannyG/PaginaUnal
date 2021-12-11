@@ -5,24 +5,19 @@ const fetch = require('node-fetch');
 const { ApolloError } = require('apollo-server-errors');
 
 const typeDefs = require('./typeDefs');
-
 const resolvers = require('./resolvers');
-
 const Api = require('./dataSources');
-
-
-
 
 
 const server = new ApolloServer({
  
-  context: async ({ req }) => {
+  context: async ({ req }) => {    
     const token = req.headers.authorization || '';
 
     if (token == '') return { UserIdToken: null }
     else {
-      let auth = 'Token' + ' ' + token
 
+      let auth = 'Token' + ' ' + token
       let response = await fetch(
         serverConfig.acces,
         {
@@ -35,7 +30,10 @@ const server = new ApolloServer({
       else throw new ApolloError((await response.json()).error, 401);
 }
    
-  }, typeDefs, resolvers,
+  },
+  typeDefs,
+  resolvers,
+
   dataSources: () => ({
     UsersApi: new Api.UsersApi(),
     ProductsApi:new Api.ProductsApi(),
@@ -43,13 +41,17 @@ const server = new ApolloServer({
     MeasureApi: new Api.MeasureApi(),
     BillsApi: new Api.BillsApi(),
   }),
+
   introspection: true,
+
   playground: true
+
 });
 
 
 
 
-server.listen() .then(({ url }) => {
+server.listen(process.env.PORT || 4000)
+  .then(({ url }) => {
     console.log(` Servidor está corriendo en ${url}`);
   })

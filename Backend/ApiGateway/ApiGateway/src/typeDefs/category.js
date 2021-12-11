@@ -27,7 +27,6 @@ const categoriesTypes = gql`
     updatedAt: String
   }
 
-
   type DeleteCategory {
     mensaje: String!
   }
@@ -49,6 +48,7 @@ const categoriesTypes = gql`
     DeleteCategory(categoryId: idCategory!): DeleteCategory!
     UpdateCategory(categoryInput: CategoryUpdate!): CategoryDetail!
   }
+  
 `;
 
 module.exports = categoriesTypes;

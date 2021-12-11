@@ -1,40 +1,39 @@
 const usersResolver = {
 
+  
   Query: {
-    userDetailById: (_, { userId }, { dataSources, userIdToken }) => {
-     
-      if (userId == userIdToken) return dataSources.UsersApi.getUser(userId);
+
+    userDetailById: async (_, { userId }, { dataSources, userIdToken }) => {     
+      if (userId == userIdToken) return await dataSources.UsersApi.getUser(userId);
       else return null;
     }
+
   },
 
   Mutation: {    
 
-    RegisterUser:async (_, { input }, { dataSources }) => {
-      return dataSources.UsersApi.RegisterUser(input);
+    RegisterUser: async (_, { input }, { dataSources }) => {
+      return await dataSources.UsersApi.RegisterUser(input);
     },
     
-    LoginUser:async (_, { credentials }, { dataSources }) => {
-      return dataSources.UsersApi.LoginUser(credentials);
+    LoginUser: async (_, { credentials }, { dataSources }) => {
+      return await dataSources.UsersApi.LoginUser(credentials);
     },
     
-    RefreshToken: async (_, { credentials }, { dataSources, userIdToken }) => {
-      
-      let userId = await dataSources.UsersApi.getUser(userIdToken)
-      
-      if (userId.id == userIdToken) return dataSources.UsersApi.RefreshToken(credentials);
+    RefreshToken: async (_, { credentials }, { dataSources, userIdToken }) => {      
+      let userId = await dataSources.UsersApi.getUser(userIdToken)      
+      if (userId.id == userIdToken) return await dataSources.UsersApi.RefreshToken(credentials);
       else return null;
     },
 
-    LogoutUser: async (_, { credentials }, { dataSources, userIdToken }) => {
-      
+    LogoutUser: async (_, { credentials }, { dataSources, userIdToken }) => {      
       let userId = await dataSources.UsersApi.getUser(userIdToken)
-
-      if (userId.id == userIdToken) return dataSources.UsersApi.LogoutUser(credentials);
+      if (userId.id == userIdToken) return await dataSources.UsersApi.LogoutUser(credentials);
       else return null;
     },
 
   }
+
 }
 
 module.exports = usersResolver;

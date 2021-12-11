@@ -45,8 +45,8 @@ input MeasureUpdate {
     CreateMeasure(measureInput: CreateMeasure!): CreateDetaill!
     UpdateMeasure(measureInput: MeasureUpdate!): MeasureDetail!
     DeleteMeasure(measureId: idMeasure!): DeleteMeasure!
-
   }
+  
 `;
 
 module.exports = measureUnitTypes;
