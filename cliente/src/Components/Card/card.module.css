@@ -1,0 +1,27 @@
+.container{
+  background-color:rgba(20, 69, 161, 0.644);
+   background-color: #282c34;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+img{
+  width:200px;
+  height:200px;
+}
+.CardButton {
+  margin: 1% auto ;
+  border-color: rgba(59, 212, 54, 0.644);
+  padding: auto;
+  width: 80px;
+  height: 30px;
+  background: rgb(18, 37, 211);
+  color: white;
+  font-style: italic;
+  font-size: .8em;
+  cursor: pointer;
+}
