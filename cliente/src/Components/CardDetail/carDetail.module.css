@@ -1,12 +1,19 @@
 .container{
   background-color:rgba(20, 69, 161, 0.644);
-   background-color: #282c34;
+   background-color: rgba(0, 0, 0, 0.603);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  margin: 20px 70px 0;
+  width: 90%;
+  border-radius: 20px;
+  padding: 60px 0;
+  box-shadow: 0px 0px 5px 5px rgb(0, 0, 0);
+
+
 
 }
 
@@ -33,5 +40,22 @@
   color: white;
   font-style: italic;
   font-size: 1em;
+  cursor: pointer;
+  margin-left: 900px;
+  
+
+}
+
+.comprar{
+  margin-top: -300px;
+  margin-left: 820px;
+}
+
+button{
+  background: none;
+  width: 120px;
+  border-radius: 10px;
+  color: blanchedalmond;
+  padding: 10px;
   cursor: pointer;
 }

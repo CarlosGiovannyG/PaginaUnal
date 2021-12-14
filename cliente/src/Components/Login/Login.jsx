@@ -55,14 +55,16 @@ const Login = () => {
   }
 
   return (
-    <div>
-      <NotyfyError message={message} />
-      <h2>Login</h2>
+    <div className="login-contenedor">
+    <NotyfyError message={message}/>
+    <div className="login">
+    <h2>Login</h2>
       <form onSubmit={handleLogin}>
         <input type="text" required value={username} onChange={e => setUsername(e.target.value)} placeholder="Username" />
         <input type="password" required value={password} onChange={e => setPassword(e.target.value)} placeholder="Password" />
         <input type='submit' />
       </form>
+      </div>
     </div>
   )
 }

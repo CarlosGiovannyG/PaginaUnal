@@ -77,7 +77,7 @@ let total = 0
      ))}
       
       {array.length && 
-        <div>
+        <div className={styles.boton}>
           <h1>Total de su compra = ${total} </h1>
           <button onClick={handleFactura}>Confirmar Compra</button>
        </div>

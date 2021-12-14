@@ -51,7 +51,7 @@ const CardDetail = () => {
         <h4>{detail.ProductById.price}</h4>
         <h4>{detail.ProductById.measure_unit.name}</h4>
       </div>
-      <div class={styles.comprar}>
+      <div className={styles.comprar}>
         {login &&
           <button
             onClick={() => {
