@@ -1,0 +1,11 @@
+*{
+    margin: 0;
+    padding: 0;
+  }
+  
+  .App{  
+    height: 150vh;
+    background: url('../Estaticos/slider_8.jpg')center/cover;
+    background-repeat: no-repeat;
+    background-size:150%;  
+  }

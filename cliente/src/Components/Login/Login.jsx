@@ -2,6 +2,7 @@ import React,{useState} from 'react'
 import { useMutation } from '@apollo/client';
 import Mutations from '../../Utils/Mutations/'
 import NotyfyError from '../NorifyError/NotyfyError';
+import styles from './login.css'
 
 
 const Login = () => {
@@ -46,14 +47,16 @@ const Login = () => {
   }
 
   return (
-    <div>
+    <div className="login-contenedor">
       <NotyfyError message={message}/>
+      <div className="login">
       <h2>Login</h2>
       <form onSubmit={handleLogin}>
         <input type="text" required value={username} onChange={e => setUsername(e.target.value)} placeholder="Username"/>
         <input type="password" required value={password} onChange={e => setPassword(e.target.value)} placeholder="Password" />
         <input type='submit' />        
       </form>
+      </div>
     </div>
   )
 }

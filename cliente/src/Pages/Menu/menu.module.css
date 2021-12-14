@@ -6,7 +6,10 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-   background-color: #282c34;
+  background:rgba(0, 0, 0, 0.473);
+   margin: 0 68px 0;
+   width: 90%;
+   border-radius: 20px;
 
 }
 

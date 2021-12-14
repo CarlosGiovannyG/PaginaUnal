@@ -1,3 +1,171 @@
-.container{
-  background-color: green;
+*{
+  margin: 0;
+  padding: 0;
+}
+
+
+.footer {
+  display: inline-block;
+  background:rgba(0, 0, 0, 0.637);
+  padding: 100px 160px 20px;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  font-family: 'Roboto', sans-serif;
+  height: 110vh;
+  border-top: 5px solid rgba(0, 0, 0, 0.705);
+  border-radius: 10px;
+  margin: 13px;
+  margin-bottom: 50px;
+
+  
+  
+}
+
+.partFooter {
+  display: inline-block;
+  width: 30%;
+  text-align: center;
+  margin: 20px;
+  margin-top: 55px;
+
+  
+ 
+}
+
+
+.partFooter h5 {
+  display: inline-block;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 30px;
+  text-shadow:0px 0px 10px rgb(0, 181, 253); 
+  box-shadow:3px 3px 3px rgb(149, 183, 255);
+  border-radius: 5px;
+  
+}
+.partFooter h1{
+  display: inline-block;
+  color: #ffffff;
+  font-size: 25px;
+  margin-bottom: 30px;
+  text-shadow:0px 0px 10px rgb(0, 181, 253); 
+  box-shadow:3px 3px 3px rgb(149, 183, 255);
+  border-radius: 5px;
+}
+.partFooter h4 {
+  display: inline-block;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 30px;
+  margin-left: 50px;
+  text-shadow:0px 0px 10px rgb(0, 181, 253); 
+  box-shadow:3px 3px 3px rgb(149, 183, 255);
+  border-radius: 5px;
+  
+}
+
+ .partFooter  {
+  display: inline-block;
+  display: block;
+  text-decoration: none;
+  margin: 20px;
+  color: white;
+ 
+}
+.partFooter .anticon-facebook:hover{
+  display: inline-block;
+  background: #3b5998;
+  color: white;
+}
+
+/* ESTA ES LA CLASE DE LOS NUEVOS ICONOS SOCIALES */
+.anticon{
+  display: inline-block;
+  font-size: 20px;
+  display: inline-block;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  
+ 
+}
+.partFooter .anticon-instagram:hover{
+  display: inline-block;
+  background: linear-gradient(to top right, 
+  #fcde30, 
+  #e9712a, 
+  #d2313b, 
+  #ae4198, 
+  #7540a1, 
+  #5443a8);
+  color: white;
+}
+.partFooter .anticon-whats-app:hover{
+  background: #009231;
+  color: white;
+}
+
+.partFooter .anticon-mail:hover{
+  background: #d80202;
+  color: white;
+}
+.redes{
+  margin-right: 50px;
+}
+
+.partFooter img {
+  width: 70%;
+}
+
+.socialmedia{
+
+  font-size: 20px;
+  display: inline-block;
+  color: #ffffff;
+ 
+ 
+  width: 38px;
+  height: 38px;
+  line-height: 42px;
+  cursor: pointer;
+  margin-top: 30px;
+  text-align: center;
+  margin-right: 5px;
+}
+
+.partFooter b{
+  display: inline-block;
+  color:#ffffff
+
+}
+.partFooter p{
+  display: inline-block;
+  font-size: 17px;
+  text-align: justify;
+  color: #ffffff;
+  font-weight: 300;
+  display: inline-block;
+  padding: 10px;
+}
+
+.containerfooter hr{
+
+  display: inline-block;
+  border: none;
+  height: 2px;
+  background: rgb(149, 183, 255);
+  width: 900px;
+}
+.containerfooter h4{
+  display: inline-block;
+  text-align: center;
+  margin-top: 20px;
+  color: rgb(149, 183, 255);
+  font-weight: bold;
 }

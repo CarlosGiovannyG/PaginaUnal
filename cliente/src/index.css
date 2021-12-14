@@ -5,6 +5,11 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height: 130vh;
+  background: url('./images/Estaticos/slider8.jpg')center/cover;
+  background-repeat: no-repeat;
+  background-size:150%;  
+
 }
 
 code {
