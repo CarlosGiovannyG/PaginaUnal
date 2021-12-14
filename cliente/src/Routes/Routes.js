@@ -8,26 +8,27 @@ import App from '../Pages/Home/App'
 import Menu from '../Pages/Menu/Menu';
 import Nosotros from '../Pages/Nosotros/Nosotros';
 import Login from '../Components/Login/Login';
-
+import Carrito from '../Pages/Carro/Carrito'
 
 
 
 const Rout = () => {
 
 
-  
+
   return (
     <React.Fragment>
       <BrowserRouter>
-        <Navbar/>
+        <Navbar />
         <Routes>
-          <Route path='/' element={<App />}/>
-          <Route path='/menu' element={<Menu />}/>
-          <Route path='/nosotros' element={<Nosotros />}/>
-          <Route path='/create' element={<Create />}/>
-          <Route path='/products' element={<Products />}/>
-          <Route path='/product/:id' element={<CardDetail />}/>
-          <Route path='/login' element={<Login />}/>
+          <Route path='/' element={<App />} />
+          <Route path='/menu' element={<Menu />} />
+          <Route path='/nosotros' element={<Nosotros />} />
+          <Route path='/create' element={<Create />} />
+          <Route path='/products' element={<Products />} />
+          <Route path='/product/:id' element={<CardDetail />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/compra' element={<Carrito />} />
         </Routes>
       </BrowserRouter>
     </React.Fragment>

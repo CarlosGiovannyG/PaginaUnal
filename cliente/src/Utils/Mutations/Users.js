@@ -1,12 +1,9 @@
-import { gql, useMutation } from '@apollo/client';
-
-
-
+import { gql } from '@apollo/client';
 
 
 const Users = {
 
-  LOGIN:gql`
+  LOGIN: gql`
 
 mutation LoginUser($credentials: LoginUser!) {
   LoginUser(credentials: $credentials) {
@@ -20,7 +17,16 @@ mutation LoginUser($credentials: LoginUser!) {
     }
   }
 }
-`
+`,
+
+  LOGOUT: gql`
+  mutation LogoutUser($credentials: Logout!) {
+  LogoutUser(credentials: $credentials) {
+    mensaje_sesion
+    mensaje_token
+  }
+}
+  `
 
 
 }

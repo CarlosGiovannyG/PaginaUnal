@@ -3,7 +3,7 @@ import styles from './notify.module.css'
 
 
 
-const NotyfyError = ({message}) => {
+const NotyfyError = ({ message }) => {
   return (
     <div className={styles.container}>
       <h1>

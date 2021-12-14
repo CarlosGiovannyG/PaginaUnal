@@ -8,11 +8,11 @@ import styles from './products.module.css'
 
 
 
-  
-const Products = ({ products}) => {
-    
-  if(!products) return null
-   
+
+const Products = ({ products }) => {
+
+  if (!products) return null
+
   return (
     <div className={styles.container}>
       <Card products={products} />

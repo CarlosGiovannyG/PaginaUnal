@@ -9,8 +9,8 @@ const Create = () => {
   const token = localStorage.getItem('token')
 
   console.log('CREATE', token)
- 
-  
+
+
   return (
     <div className={styles.container}>
       <h1>
