@@ -1,5 +1,12 @@
 .App {
   text-align: center;
+  margin: 0 68px 0;
+  width: 90%;
+  height: 500px;
+  border-top: 10px solid rgba(0, 0, 0, 0.575);
+  border-radius: 20px;
+  background:rgba(0, 0, 0, 0.473);
+ 
 }
 
 .App-logo {
@@ -22,3 +29,33 @@
   color: #61dafb;
 }
 
+.App{
+  padding-top: 200px;
+  text-align: center;
+}
+
+.App h1{
+font-size: 80px;
+color: blanchedalmond;
+}
+.App p{
+  font-size: 20px;
+  color: blanchedalmond;
+}
+
+.App a{
+  margin: 28px 0 0 0;
+  width: 130px;
+  display: inline-block;
+  background: #de1f1f;
+  text-align: center;
+  color: #fff;
+  padding: 12px 0;
+  text-decoration: none;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 14px;
+  border-radius: 5px;
+  box-shadow: 0 8px 32px rgba(212, 21, 21, 0.46);
+  cursor: pointer;
+}

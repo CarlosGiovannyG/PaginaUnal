@@ -1,0 +1,87 @@
+.login-contenedor{  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.619);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .login-contenedor.ok{
+    visibility: hidden;
+    transition: .8s ease all;
+    transform: scale(0.1);
+  }
+  .label-alerta{  
+    font-size: 1.8em;
+    width: fit-content;
+    height: fit-content;
+    padding:5px;
+    box-sizing: border-box;
+    margin-bottom: 1%;
+  }
+  
+  
+  
+  
+  
+  .login{
+    margin-top: 50px;
+    color: rgb(253, 253, 253);
+    background-color: rgba(255, 255, 255, 0.068);
+    box-shadow: 0px 0px 5px 5px rgb(0, 0, 0);
+    font-family:Arial, Helvetica, sans-serif;
+    padding: 40px 20px 40px;
+    text-align: center;
+    width: 320px;
+    height: 300px; 
+    border-radius: 10px; 
+    
+  }
+  
+  /* TU CODIGO VA A PARTIR DE ACA
+  INPUT 
+  BOTONES
+  
+  */
+  
+  input{
+    margin-top: 20px;
+    width: 280px;
+    height: 30px;
+    background: none;
+    border: none;
+    border-bottom: 2px solid rgb(255, 255, 255);
+    color: white;
+  }
+  ::placeholder{
+    color: rgba(255, 255, 255, 0.699);
+  }
+  .ingresar button{
+   border-color:rgb(0, 173, 29);
+    color: white;
+    margin-top: 20px;
+    width: 280px;
+    height: 30px;
+    background: rgb(0, 173, 29);
+  
+  }
+  
+  
+  .registrar button{
+    border-color:rgb(173, 0, 0);
+    color: white;
+    margin-top: 20px;
+    width: 280px;
+    height: 30px;
+    background: rgb(173, 0, 0);
+    
+  }
+  
