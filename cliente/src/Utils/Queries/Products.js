@@ -1,12 +1,8 @@
-import { gql  } from '@apollo/client';
-
-
-
+import { gql } from '@apollo/client';
 
 const Products = {
 
-
-  ALL_PRODUCTS : gql`
+  ALL_PRODUCTS: gql`
 
  query{
     Products {
@@ -28,7 +24,7 @@ const Products = {
   `,
 
 
-FIND_PRODUCT : gql`
+  FIND_PRODUCT: gql`
   
  query findProduct($producId: idProduct!) {
   ProductById(producId: $producId) {

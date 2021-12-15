@@ -1,6 +1,5 @@
 import { gql } from '@apollo/client';
 
-
 const Bills = {
 
   FATURAR: gql`
@@ -8,7 +7,7 @@ const Bills = {
 mutation Facturar($input: CreateBills!) {
    CreateBills(input: $input) {
      _id
-    id_user
+    user
     products {
       _id
     }
@@ -17,10 +16,8 @@ mutation Facturar($input: CreateBills!) {
 }
 `,
 
- 
-
 }
 
-// refresQuerys:[{NOMBRE QUERIES A REFRESCAR}]
+
 
 export default Bills

@@ -2,8 +2,11 @@ import React, { useState } from 'react'
 import { useMutation } from '@apollo/client';
 import Mutations from '../../Utils/Mutations/'
 import NotyfyError from '../NorifyError/NotyfyError';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
+import styles from './login.module.css'
+
+import { Link } from 'react-router-dom';
 
 const Login = () => {
   const navigate = useNavigate()
@@ -34,8 +37,6 @@ const Login = () => {
       }
     })
 
-
-
     const { token, mensaje, user } = response.data.LoginUser
 
     console.log('LOGIN TOKEN', token)
@@ -45,25 +46,28 @@ const Login = () => {
     localStorage.setItem("userId", user.id);
     localStorage.setItem("login", true)
 
-    // localStorage.setItem("username", user.username); 
-    // localStorage.setItem("last_name", user.last_name); 
-
-    messages(mensaje)
+    alert(mensaje)
     setUsername('')
     setPassword('')
     navigate('/')
   }
 
   return (
-    <div className="login-contenedor">
-    <NotyfyError message={message}/>
-    <div className="login">
-    <h2>Login</h2>
-      <form onSubmit={handleLogin}>
-        <input type="text" required value={username} onChange={e => setUsername(e.target.value)} placeholder="Username" />
-        <input type="password" required value={password} onChange={e => setPassword(e.target.value)} placeholder="Password" />
-        <input type='submit' />
-      </form>
+    <div>
+      <div className={styles.loginContenedor}>
+        <NotyfyError message={message} />
+        <div className={styles.login}>
+          <h2>Login</h2>
+          <form onSubmit={handleLogin}>
+            <input type="text" required value={username} onChange={e => setUsername(e.target.value)} placeholder="Username" />
+            <input type="password" required value={password} onChange={e => setPassword(e.target.value)} placeholder="Password" />
+            <input type='submit' />
+          </form>
+
+        </div>
+        <Link to='/ProyectoUnal'>
+          <button className={styles.ButtonClose}  >X</button>
+        </Link>
       </div>
     </div>
   )

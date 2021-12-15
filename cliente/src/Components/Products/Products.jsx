@@ -6,10 +6,8 @@ import Card from '../../Components/Card/Card'
 import styles from './products.module.css'
 
 
-
-
-
 const Products = ({ products }) => {
+
 
   if (!products) return null
 

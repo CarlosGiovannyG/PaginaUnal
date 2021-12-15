@@ -7,8 +7,8 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-  margin: 20px 70px 0;
-  width: 90%;
+  margin:0 auto;
+  width: 60%;
   border-radius: 20px;
   padding: 60px 0;
   box-shadow: 0px 0px 5px 5px rgb(0, 0, 0);
@@ -30,8 +30,7 @@
 }
 
 
-.ButtonClose {
-  
+.ButtonClose {  
   border-color: rgb(218, 165, 0);
   padding: auto;
   width: 40px;
@@ -41,14 +40,18 @@
   font-style: italic;
   font-size: 1em;
   cursor: pointer;
-  margin-left: 900px;
+  margin: 0% 0%  0% 50%;
   
 
 }
 
 .comprar{
-  margin-top: -300px;
-  margin-left: 820px;
+ margin: 0 auto;
+ background-color:rgba(31, 24, 24, 0.609);
+ display: flex;
+ justify-content:center;
+ align-items:center;
+  width: 10%;
 }
 
 button{

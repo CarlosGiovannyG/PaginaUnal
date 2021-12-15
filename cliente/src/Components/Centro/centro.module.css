@@ -1,0 +1,55 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.contenidoInicio{
+  margin: 5% auto;
+  width: 60%;
+  height: 500px;
+  border-top: 10px solid rgba(0, 0, 0, 0.575);
+  border-radius: 20px;
+  background:rgba(0, 0, 0, 0.473);
+ 
+}
+
+.contenidos{
+  padding-top: 200px;
+  text-align: center;
+}
+
+.contenidos h1{
+font-size: 80px;
+color: blanchedalmond;
+}
+.contenidos p{
+  font-size: 20px;
+  color: blanchedalmond;
+}
+
+/* Boton del contenido de inicio */
+
+.contenidos a{
+  margin: 28px 0 0 0;
+    width: 130px;
+    display: inline-block;
+    text-align: center;
+    color: #fff;
+    padding: 12px 0;
+    text-decoration: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 14px;
+    border-radius: 5px;
+   
+}
+
+.contenidos a:hover{
+  box-shadow: 0px 0px 10px rgb(255, 255, 255);
+  border-radius: 5px;
+
+}
+.btnMenu{
+ font-size: 1.5em;
+  color: red; 
+}

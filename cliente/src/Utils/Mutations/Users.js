@@ -3,6 +3,14 @@ import { gql } from '@apollo/client';
 
 const Users = {
 
+  REGISTER: gql`
+
+mutation registerUser($input: RegisterUser!) {
+  RegisterUser(input: $input) {
+    mensaje
+  }
+}
+`,
   LOGIN: gql`
 
 mutation LoginUser($credentials: LoginUser!) {
@@ -31,6 +39,5 @@ mutation LoginUser($credentials: LoginUser!) {
 
 }
 
-// refresQuerys:[{NOMBRE QUERIES A REFRESCAR}]
 
 export default Users

@@ -7,18 +7,9 @@
   font-size: calc(10px + 2vmin);
   color: white;
   background:rgba(0, 0, 0, 0.473);
-   margin: 0 68px 0;
+   margin: 0 auto;
    width: 90%;
    border-radius: 20px;
 
 }
 
-.containerCentro{
-  width: 85%;
-  height: 85%;
-  margin: 10px auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  border-radius: 10px;
-  background-color: rgba(7, 6, 6, 0.322);
-}

@@ -1,13 +1,14 @@
 import styles from './app.module.css';
+import Centro from "../../Components/Centro/Centro";
+
 
 function App() {
   return (
     <div className={styles.App}>
-      <h1>
-        Delicias Colombianas
-      </h1>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-      <a>Menú</a>
+      <Centro
+        titulo="Delicias Colombianas"
+        parrafo="Lorem ipsum dolor, sit amet consectetur adipisicing elit."
+      />
     </div>
   );
 }
